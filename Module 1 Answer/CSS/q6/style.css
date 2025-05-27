@@ -1,0 +1,43 @@
+/* --------------------------------------------
+   Body Styling
+--------------------------------------------- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* --------------------------------------------
+   Link Styling with Pseudo-Classes
+--------------------------------------------- */
+a:link {
+    color: #007BFF;               /* Default link color */
+    text-decoration: none;
+}
+
+a:visited {
+    color: #5a5a5a;               /* Visited link color */
+}
+
+a:hover {
+    color: #FF5722;               /* Hover color */
+    text-decoration: underline;
+}
+
+a:active {
+    color: #d32f2f;               /* Active link color (when clicked) */
+}
+
+/* --------------------------------------------
+   Custom List Styling
+--------------------------------------------- */
+.custom-list {
+    list-style-type: none;        /* Remove default bullets */
+    padding-left: 0;
+}
+
+.custom-list li {
+    margin: 10px 0;
+    font-size: 18px;
+}

@@ -1,0 +1,37 @@
+/* --------------------------------------------
+   Body Styling with Background Image and Fallback
+--------------------------------------------- */
+body {
+    background-color: #e0f7fa; /* Fallback color */
+    background-image: url('cityscape.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #222; /* Default text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* --------------------------------------------
+   Gradient Header using Linear Gradient
+--------------------------------------------- */
+.gradient-header {
+    background: linear-gradient(to right, #007BFF, #00C6FF);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+/* --------------------------------------------
+   Sub-header Gradient Styling
+--------------------------------------------- */
+.gradient-subheader {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* -------------------------------------------*

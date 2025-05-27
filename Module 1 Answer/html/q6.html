@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, select, textarea, button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    #phoneError {
+      color: red;
+      font-size: 14px;
+    }
+
+    #feeDisplay {
+      font-weight: bold;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    img.enlarged {
+      transform: scale(1.5);
+    }
+
+    #charCount {
+      font-size: 14px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Give Us Your Feedback</h2>
+
+  <!-- 📱 Phone Number with onblur -->
+  <label for="phone">Phone Number:</label>
+  <input type="text" id="phone" placeholder="Enter 10-digit phone number" onblur="validatePhone()" />
+  <div id="phoneError"></div>
+
+  <!-- 🎫 Event Type with onchange -->
+  <label for="eventType">Choose Event Type:</label>
+  <select id="eventType" onchange="showFee()">
+    <option value="">-- Select --</option>
+    <option value="100">Music - ₹100</option>
+    <option value="150">Sports - ₹150</option>
+    <option value="200">Tech - ₹200</option>
+  </select>
+  <div id="feeDisplay"></div>
+
+  <!-- 🖼 Image with ondblclick -->
+  <h3>Event Poster</h3>
+  <img id="eventImage" src="https://via.placeholder.com/300x200.png?text=Event+Poster" ondblclick="enlargeImage()" alt="Event Poster" />
+
+  <!-- 💬 Feedback with keyboard events -->
+  <label for="feedback">Your Feedback:</label>
+  <textarea id="feedback" rows="5" onkeyup="countCharacters()"></textarea>
+  <div id="charCount">Characters: 0</div>
+
+  <!-- 📝 Submit Button with onclick -->
+  <button onclick="submitForm()">Submit Feedback</button>
+
+  <script>
+    function validatePhone() {
+      const phone = document.getElementById('phone').value;
+      const error = document.getElementById('phoneError');
+      const regex = /^[0-9]{10}$/;
+
+      if (!regex.test(phone)) {
+        error.textContent = "Please enter a valid 10-digit phone number.";
+      } else {
+        error.textContent = "";
+      }
+    }
+
+    function showFee() {
+      const fee = document.getElementById('eventType').value;
+      const feeDisplay = document.getElementById('feeDisplay');
+
+      if (fee) {
+        feeDisplay.textContent = Selected Event Fee: ₹${fee};
+      } else {
+        feeDisplay.textContent = '';
+      }
+    }
+
+    function enlargeImage() {
+      const image = document.getElementById('eventImage');
+      image.classList.toggle('enlarged');
+    }
+
+    function countCharacters() {
+      const feedback = document.getElementById('feedback').value;
+      document.getElementById('charCount').textContent = Characters: ${feedback.length};
+    }
+
+    function submitForm() {
+      alert("Thank you! Your feedback has been submitted.");
+    }
+  </script>
+
+</body>
+</html>

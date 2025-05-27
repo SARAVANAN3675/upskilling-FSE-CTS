@@ -1,0 +1,14 @@
+/* --------------------------------------------
+   Multi-Column Styling for News Article
+--------------------------------------------- */
+.news-article {
+    width: 90%;
+    margin: 30px auto;
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}

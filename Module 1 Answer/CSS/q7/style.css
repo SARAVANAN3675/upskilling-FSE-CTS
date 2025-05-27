@@ -1,0 +1,30 @@
+/* --------------------------------------------
+   Table Styling
+--------------------------------------------- */
+.event-table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Row Styling */
+.event-table th {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+/* Table Cell Styling */
+.event-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fdfdfd;
+}
+
+/* Zebra Striping */
+.event-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

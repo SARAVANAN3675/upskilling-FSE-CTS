@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    select, button {
+      font-size: 16px;
+      padding: 8px;
+      margin: 10px;
+    }
+
+    #message {
+      margin-top: 20px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Select Your Preferred Event Type</h1>
+
+  <select id="eventType">
+    <option value="">-- Choose an event type --</option>
+    <option value="Music">Music</option>
+    <option value="Sports">Sports</option>
+    <option value="Tech">Tech</option>
+    <option value="Art">Art</option>
+  </select>
+
+  <div>
+    <button onclick="savePreference()">Save Preference</button>
+    <button onclick="clearPreferences()">Clear Preferences</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    // On page load, check localStorage
+    window.onload = function () {
+      const savedType = localStorage.getItem('preferredEventType');
+      const select = document.getElementById('eventType');
+
+      if (savedType) {
+        select.value = savedType;
+        document.getElementById('message').innerText = Welcome back! Your preferred event type is "${savedType}".;
+      }
+    };
+
+    function savePreference() {
+      const eventType = document.getElementById('eventType').value;
+      if (eventType) {
+        localStorage.setItem('preferredEventType', eventType);
+        sessionStorage.setItem('lastSelected', eventType); // optional extra storage
+        document.getElementById('message').innerText = Saved: "${eventType}" as your preferred event type.;
+      } else {
+        document.getElementById('message').innerText = "Please select a valid event type.";
+      }
+    }
+
+    function clearPreferences() {
+      localStorage.removeItem('preferredEventType');
+      sessionStorage.clear();
+      document.getElementById('eventType').value = "";
+      document.getElementById('message').innerText = "Preferences cleared.";
+    }
+  </script>
+
+</body>
+</html>

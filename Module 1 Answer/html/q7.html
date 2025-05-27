@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Promo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    video {
+      width: 60%;
+      margin-top: 20px;
+    }
+
+    #videoStatus {
+      margin-top: 10px;
+      font-weight: bold;
+      color: green;
+    }
+
+    form {
+      margin-top: 40px;
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Upcoming Event Promo</h1>
+
+  <!-- 🎥 Video Element -->
+  <video id="promoVideo" controls oncanplay="showReadyMessage()">
+    <source src="promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="videoStatus"></div>
+
+  <!-- 📝 Simple Form -->
+  <form id="eventForm">
